@@ -28,6 +28,12 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      my_target: {
+        files: {
+          'dist/lib_min.js': ['public/lib/*'],
+          'dist/style_min.css': ['public/style.css']
+        }
+      }
     },
 
     eslint: {
@@ -99,3 +105,20 @@ module.exports = function(grunt) {
 
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
