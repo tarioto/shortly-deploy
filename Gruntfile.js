@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+ 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     },
 
     eslint: {
-      target: ['public/dist/*.js']
+      target: ['public/client/*']
     },
 
     cssmin: {
