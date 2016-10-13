@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['public/client/*'],
-        dest: 'dist/built.js',
+        dest: 'public/dist/built.js',
       },
     },
 
@@ -30,8 +30,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'dist/lib_min.js': ['public/lib/*'],
-          'dist/style_min.css': ['public/style.css']
+          'public/dist/lib_min.js': ['public/lib/*']
         }
       }
     },
@@ -43,6 +42,12 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      target: {
+        files: {
+          'public/dist/styles_min.css': ['public/styles.css']
+        }
+      }
+      
     },
 
     watch: {
@@ -102,6 +107,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     // add your deploy tasks here
   ]);
+
 
 
 };
