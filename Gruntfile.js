@@ -92,18 +92,20 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', ['concat', 'cssmin', 'uglify']);
+  grunt.registerTask('build', ['eslint', 'concat', 'cssmin', 'uglify']);
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
       // add your production server task here
+      console.log('production');
+      grunt.task.run([ 'server-dev' ]);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
   grunt.registerTask('deploy', [
-    // add your deploy tasks here
+    'build', 'test', 'upload'
   ]);
 
 
