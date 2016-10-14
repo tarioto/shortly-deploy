@@ -24,7 +24,7 @@ userSchema.pre('save', function(next) {
   var cipher = Promise.promisify(bcrypt.hash);
   return cipher(this.password, null, null).bind(this)
     .then(function(hash) {
-      this.password = hash);
+      this.password = hash;
       next();
     });
 });
